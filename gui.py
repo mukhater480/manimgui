@@ -8,20 +8,6 @@ import sys,os,logging
 
 DIRECTORY = "c:\\Users\jaybo\OneDrive\Documents\Manim"
 
-class QPlainTextEditLogger(logging.Handler):
-    def __init__(self, parent):
-        super(Logger, self).__init__()
-
-        self.widget = QPlainTextEdit(parent)
-        self.widget.setReadOnly(True)
-
-    def emit(self, record):
-        msg = self.format(record)
-        self.widget.textCursor().appendPlainText(msg)
-
-    def write(self, m):
-        pass
-
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
@@ -35,14 +21,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.show()  
     
+    # Procedure to show stacked widget
     def display(self,i):
         self.presetStack.setCurrentIndex(i)
     
+    # Procedure to compile
     @pyqtSlot()
     def compilePreset(self):
-        command_string = "python " + DIRECTORY + "\manim.py " + DIRECTORY + "\gui\\presets.py"
-        fname_1 = 'gui\\temp.py'
+        command_string = "python " + DIRECTORY + "\manim.py " + DIRECTORY + "\manimgui\\presets.py"
+        fname_1 = 'manimgui\\temp.py'
         fname = os.path.join(DIRECTORY, fname_1)
+        # Complex function
         if self.presetCombo.currentIndex() == 1:
             command_string += " ComplexFunction"
             with open(fname, 'w') as f:
@@ -51,6 +40,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     "complex_func = lambda z : ",
                     self.le_complex_func.text()
                 ])
+        # Slope and Derivative
         elif self.presetCombo.currentIndex() == 2:
             command_string += " SlopeAndDerivative"
             with open(fname, 'w') as f:
@@ -59,6 +49,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     "real_func = lambda x : ",
                     self.le_real_func.text()
                 ])
+        # Linear Transformation
         elif self.presetCombo.currentIndex() == 3:
             command_string += " LinearTransformation"
             temp = ""

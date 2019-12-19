@@ -1,6 +1,6 @@
 from manimlib.imports import *
-from gui.defaults import *
-from gui.temp import *
+from manimgui.defaults import *
+from manimgui.temp import *
 
 #real_func
 #complex_func

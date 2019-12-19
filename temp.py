@@ -1,2 +1,2 @@
-show_basis_vectors = True
-linear_transf = [[1,1],[1,1]]
+import numpy as np
+complex_func = lambda z : z
