@@ -2,7 +2,7 @@
 
 ![screencap](screencap.png)
 
-Low-capability GUI for Manim, primarily for generating preset scenes.
+Low-capability GUI for Manim, primarily for generating preset scenes.  Currently, there are a measly three scenes to choose from, but I'll be working on expanding and classifying those in the near future.
 
 # Instructions
 
