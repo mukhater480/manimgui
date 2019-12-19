@@ -1,5 +1,7 @@
 # Manim-gui 
 
+![screencap](screencap.png)
+
 Low-capability GUI for Manim, primarily for generating preset scenes.
 
 # Instructions

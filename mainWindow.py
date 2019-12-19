@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'gui\UI_mainwindow.ui'
+# Form implementation generated from reading ui file 'manimgui\UI_mainwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.13.0
 #
@@ -289,7 +289,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.presetStack.setCurrentIndex(3)
+        self.presetStack.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
