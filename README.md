@@ -12,5 +12,8 @@ Low-capability GUI for Manim, primarily for generating preset scenes.
 
 # Changelog
 
-### Version 0.1.0 (current): 
+### Version 0.1.1 (current): 
+- using pathlib now, should work on both Mac and Windows
+
+### Version 0.1.0: 
 - initialization

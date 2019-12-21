@@ -5,8 +5,9 @@ from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 from mainWindow import Ui_MainWindow
 import sys,os,logging
+from pathlib import Path
 
-DIRECTORY = "c:\\Users\jaybo\OneDrive\Documents\Manim"
+MANIM_DIRECTORY = Path("c://Users/jaybo/OneDrive/Documents/Manim")
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
@@ -28,9 +29,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     # Procedure to compile
     @pyqtSlot()
     def compilePreset(self):
-        command_string = "python " + DIRECTORY + "\manim.py " + DIRECTORY + "\manimgui\\presets.py"
-        fname_1 = 'manimgui\\temp.py'
-        fname = os.path.join(DIRECTORY, fname_1)
+        path1 = MANIM_DIRECTORY / "manim.py"
+        path2 = MANIM_DIRECTORY / "manimgui" / "presets.py"
+        command_string = "python " + path1.absolute().as_posix() + " " + path2.absolute().as_posix()
+        print(command_string)
+        fname = MANIM_DIRECTORY / "manimgui" / "temp.py"
         # Complex function
         if self.presetCombo.currentIndex() == 1:
             command_string += " ComplexFunction"
